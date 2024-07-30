@@ -1,5 +1,9 @@
 name: CAPMVMV (Manual) - Build and release
 
+permissions:
+    contents: read
+    packages: write
+
 on:
   workflow_dispatch:
     branches: [main]
@@ -11,9 +15,6 @@ defaults:
 jobs:
   release:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
     steps:
       - uses: actions/checkout@v2
       - name: Login to container registry
