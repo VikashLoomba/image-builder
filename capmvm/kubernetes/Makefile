@@ -2,7 +2,7 @@ DOCKER := docker
 BUILD_DATE:=$(shell date --rfc-3339=seconds)
 GIT_SHA:=$(shell git rev-parse HEAD)
 
-REGISTRY?=ghcr.io/weaveworks-liquidmetal
+REGISTRY?=ghcr.io/vikashloomba
 IMAGE_NAME?=$(REGISTRY)/capmvm-k8s-os
 CONTAINERD_VERSION?=1.5.9
 TAG?=$(shell git rev-parse --short HEAD)
