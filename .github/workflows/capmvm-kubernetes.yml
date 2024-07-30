@@ -1,5 +1,7 @@
 name: CAPMVM - Build and release
-
+permissions:
+  contents: read
+  packages: write
 on:
   pull_request:
     paths:
