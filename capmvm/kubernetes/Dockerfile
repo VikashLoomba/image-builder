@@ -49,9 +49,6 @@ RUN apt-get update
 
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-RUN git clone -b master --single-branch https://github.com/VikashLoomba/wg-easy.git
-
-
 #### Let iptables see bridged traffic ###
 RUN echo "overlay \n\
 br_netfilter" >> /etc/modules-load.d/containerd.conf
