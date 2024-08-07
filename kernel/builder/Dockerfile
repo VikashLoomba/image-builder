@@ -16,4 +16,4 @@ RUN apt-get update -y && \
         resolvconf          \
         wireguard           \
         wget             && \
-    update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 10
+    update-alternatives --install /usr/bin/gcc gcc 
