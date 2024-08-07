@@ -2,7 +2,7 @@
 
 DOCKER := docker
 
-REGISTRY?=ghcr.io/weaveworks-liquidmetal
+REGISTRY?=ghcr.io/vikashloomba
 
 BUILDER_IMAGE_NAME?=$(REGISTRY)/kernel-builder
 
