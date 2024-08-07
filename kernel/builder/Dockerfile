@@ -14,7 +14,6 @@ RUN apt-get update -y && \
         libssl-dev          \
         ca-certificates     \
         kmod                \
-        resolvconf          \
         wireguard           \
         wget             && \
     update-alternatives --install /usr/bin/gcc gcc 
