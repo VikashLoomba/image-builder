@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
         libseccomp2 \
         systemd \
         jq && \
-    apt install -y wireguard && \
+    apt install -y wireguard resolvconf && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     sed -i -e 's/^AcceptEnv LANG LC_\*$/#AcceptEnv LANG LC_*/' /etc/ssh/sshd_config
