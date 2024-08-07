@@ -72,19 +72,6 @@ RUN sysctl --system
 RUN wget https://github.com/containerd/containerd/releases/download/v${CONTAINERD_VERSION}/cri-containerd-cni-${CONTAINERD_VERSION}-linux-${ARCH}.tar.gz
 RUN tar --no-overwrite-dir -C / -xzf cri-containerd-cni-${CONTAINERD_VERSION}-linux-${ARCH}.tar.gz && rm -f cri-containerd-cni-${CONTAINERD_VERSION}-linux-${ARCH}.tar.gz
 
-# ### Add apt repos
-# # Kubeadm, Kubelet, and Kubectl
-# RUN curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-# RUN echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-
-# RUN apt-get update && apt-get install -y \
-#         kubeadm=${KUBERNETES_VERSION}-00 \
-#         kubelet=${KUBERNETES_VERSION}-00 \
-#         kubectl=${KUBERNETES_VERSION}-00 && \
-#     apt-get clean && \
-#     rm -rf /var/lib/apt/lists/* && \
-#     apt-mark hold kubelet kubeadm kubectl
-
 RUN mkdir -p /etc/containerd && containerd config default > /etc/containerd/config.toml
 RUN rm /etc/cni/net.d/10-containerd-net.conflist
 RUN systemctl enable containerd
