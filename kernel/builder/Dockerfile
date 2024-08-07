@@ -5,7 +5,7 @@ RUN apt-get update -y && \
         bc                  \
         bison               \
         build-essential     \
-        gcc-7               \
+        gcc                 \
         flex                \
         git                 \
         libelf-dev          \
