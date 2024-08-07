@@ -70,6 +70,9 @@ kernel.panic_on_oops = 1" >> /etc/sysctl.d/99-kubernetes-cri.conf
 # Apply sysctl params without reboot
 RUN sysctl --system
 
+# Clone wg-easy
+RUN git clone https://github.com/wg-easy/wg-easy.git
+
 # Install Containerd
 RUN wget https://github.com/containerd/containerd/releases/download/v${CONTAINERD_VERSION}/cri-containerd-cni-${CONTAINERD_VERSION}-linux-${ARCH}.tar.gz
 RUN tar --no-overwrite-dir -C / -xzf cri-containerd-cni-${CONTAINERD_VERSION}-linux-${ARCH}.tar.gz && rm -f cri-containerd-cni-${CONTAINERD_VERSION}-linux-${ARCH}.tar.gz
