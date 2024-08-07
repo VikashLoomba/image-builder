@@ -14,5 +14,4 @@ RUN apt-get update -y && \
         ca-certificates     \
         kmod                \
         wireguard           \
-        wget             && \
-    update-alternatives --install /usr/bin/gcc gcc 
+        wget             
