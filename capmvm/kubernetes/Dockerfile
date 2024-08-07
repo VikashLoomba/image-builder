@@ -29,10 +29,10 @@ RUN apt-get update && apt-get install -y \
         libseccomp2 \
         systemd \
         jq && \
+    apt install -y wireguard && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     sed -i -e 's/^AcceptEnv LANG LC_\*$/#AcceptEnv LANG LC_*/' /etc/ssh/sshd_config
-RUN apt install -y wireguard
 # Add Docker's official GPG key:
 RUN apt-get update && \
         apt-get install -y ca-certificates curl && \
