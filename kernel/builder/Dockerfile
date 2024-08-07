@@ -14,4 +14,5 @@ RUN apt-get update -y && \
         ca-certificates     \
         kmod                \
         wireguard           \
+        wireguard-tools     \
         wget             
